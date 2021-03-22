@@ -1,18 +1,11 @@
 defmodule SummationLists do
-  @moduledoc """
-  Documentation for `SummationLists`.
-  """
 
-  @doc """
-  Hello world.
+  def call(list), do: sum(list, 0)
 
-  ## Examples
+  def sum([], acc), do: acc
 
-      iex> SummationLists.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def sum([head | tail], acc) do
+    acc = acc + head
+    sum(tail, acc)
   end
 end
